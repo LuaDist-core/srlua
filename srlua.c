@@ -97,13 +97,13 @@ static void fatal(const char* progname, const char* message)
  exit(EXIT_FAILURE);
 }
 
+char *getprog();
+
 int main(int argc, char *argv[])
 {
  lua_State *L;
-#ifdef _WIN32
- char name[MAX_PATH];
- argv[0]= GetModuleFileName(NULL,name,sizeof(name)) ? name : NULL;
-#endif
+ argv[0]=getprog();
+ 
  if (argv[0]==NULL) fatal("srlua","cannot locate this executable");
  L=luaL_newstate();
  if (L==NULL) fatal(argv[0],"not enough memory for state");
