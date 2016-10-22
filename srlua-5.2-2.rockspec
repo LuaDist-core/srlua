@@ -1,7 +1,7 @@
 package = "srlua"
-version = "5.2-1"
+version = "5.2-2"
 source = {
-    tag = "5.2-1",
+    tag = "5.2-2",
     url = "git://github.com/LuaDist-core/srlua.git"
 }
 description = {
